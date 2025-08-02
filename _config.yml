@@ -1,0 +1,22 @@
+# GitHub Pages Configuration
+theme: minima
+title: "MSc Educational Psychology and Learning Science"
+description: "Master of Science program in Educational Psychology and Learning Science - Comprehensive curriculum integrating psychology, cognitive science, and educational technology."
+baseurl: ""
+url: ""
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: About
+    url: /#about
+  - title: Courses
+    url: /#courses
+  - title: Admissions
+    url: /#admissions
+  - title: Contact
+    url: /#contact
+
+# SEO
+google_analytics: # Add your GA tracking ID here

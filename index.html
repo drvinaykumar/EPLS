@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSc Educational Psychology and Learning Science</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav__brand">
+                    <h1 class="nav__title">MSc Educational Psychology</h1>
+                    <p class="nav__subtitle">& Learning Science</p>
+                </div>
+                <div class="nav__menu" id="navMenu">
+                    <a href="#home" class="nav__link nav__link--active">Home</a>
+                    <a href="#about" class="nav__link">About</a>
+                    <a href="#courses" class="nav__link">Courses</a>
+                    <a href="#admissions" class="nav__link">Admissions</a>
+                    <a href="#resources" class="nav__link">Resources</a>
+                    <a href="#contact" class="nav__link">Contact</a>
+                </div>
+                <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Master of Science in Educational Psychology and Learning Science</h1>
+                    <p class="hero__description">Equip yourself with comprehensive understanding of how individuals learn, develop, and interact within educational contexts. Integrate principles from psychology, cognitive science, and educational technology to foster innovative approaches to teaching and learning.</p>
+                    <div class="hero__actions">
+                        <button class="btn btn--primary btn--lg" onclick="scrollToSection('admissions')">Apply Now</button>
+                        <button class="btn btn--outline btn--lg" onclick="scrollToSection('courses')">Explore Courses</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program Overview -->
+        <section class="section">
+            <div class="container">
+                <div class="program-overview">
+                    <div class="program-overview__content">
+                        <h2>Program Overview</h2>
+                        <p>This Master of Science (MSc) program in Educational Psychology and Learning Science is designed to equip students with a comprehensive understanding of how individuals learn, develop, and interact within educational contexts. The curriculum integrates principles from psychology, cognitive science, and educational technology to foster innovative approaches to teaching, learning, and educational leadership.</p>
+                    </div>
+                    <div class="program-features">
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h3>8 Core Courses</h3>
+                                <p>Comprehensive curriculum covering AI foundations, developmental psychology, cognitive science, and educational leadership</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>Flexible Certification</h3>
+                                <p>Choose from individual certificates, postgraduate diploma, or full MSc degree</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>No Programming Required</h3>
+                                <p>Focus on theoretical knowledge and practical applications without technical prerequisites</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>Research Opportunities</h3>
+                                <p>Optional thesis project with GenAI-assisted research methodology</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section section--bg">
+            <div class="container">
+                <h2 class="section__title">About the Program</h2>
+                <div class="about-content">
+                    <div class="about-content__main">
+                        <h3>Learning Outcomes</h3>
+                        <ul class="outcomes-list">
+                            <li>Apply psychological theories to educational practice and policy</li>
+                            <li>Analyze learning processes across diverse populations and contexts</li>
+                            <li>Design evidence-based educational interventions and assessments</li>
+                            <li>Integrate AI and technology tools in educational settings</li>
+                            <li>Lead educational change and innovation initiatives</li>
+                            <li>Conduct research in educational psychology and learning science</li>
+                        </ul>
+                    </div>
+                    <div class="about-content__sidebar">
+                        <div class="info-card">
+                            <h4>Program Structure</h4>
+                            <p><strong>Duration:</strong> 8-12 months</p>
+                            <p><strong>Format:</strong> Online with interactive sessions</p>
+                            <p><strong>Credits:</strong> 60 ECTS</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Target Audience</h4>
+                            <p>Educators, school administrators, educational consultants, and professionals seeking to advance their understanding of learning and development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="section">
+            <div class="container">
+                <h2 class="section__title">Courses</h2>
+                <div class="course-search">
+                    <input type="text" class="form-control" id="courseSearch" placeholder="Search courses...">
+                </div>
+                <div class="course-grid" id="courseGrid">
+                    <!-- Courses will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Course Detail Modal -->
+        <div class="modal hidden" id="courseModal">
+            <div class="modal__backdrop" onclick="closeCourseModal()"></div>
+            <div class="modal__content">
+                <div class="modal__header">
+                    <h3 class="modal__title" id="courseModalTitle"></h3>
+                    <button class="modal__close" onclick="closeCourseModal()">&times;</button>
+                </div>
+                <div class="modal__body" id="courseModalBody">
+                    <!-- Course details will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Admissions Section -->
+        <section id="admissions" class="section section--bg">
+            <div class="container">
+                <h2 class="section__title">Admissions</h2>
+                <div class="admissions-content">
+                    <div class="admissions-requirements">
+                        <h3>Application Requirements</h3>
+                        <ul>
+                            <li>Bachelor's degree in education, psychology, or related field</li>
+                            <li>Minimum 2 years of professional experience in education</li>
+                            <li>Statement of purpose (500-750 words)</li>
+                            <li>Two professional references</li>
+                            <li>Current CV/Resume</li>
+                            <li>English proficiency (for non-native speakers)</li>
+                        </ul>
+                    </div>
+                    <div class="certification-options">
+                        <h3>Certification Options</h3>
+                        <div class="cert-grid">
+                            <div class="cert-card">
+                                <h4>Individual Module Certificates</h4>
+                                <p>Earn certificates for completing individual courses</p>
+                            </div>
+                            <div class="cert-card">
+                                <h4>Postgraduate Diploma</h4>
+                                <p>Complete all 8 courses for diploma certification</p>
+                            </div>
+                            <div class="cert-card">
+                                <h4>Full MSc Degree</h4>
+                                <p>Complete all courses plus thesis for full master's degree</p>
+                            </div>
+                            <div class="cert-card">
+                                <h4>Thesis Option</h4>
+                                <p>8-week GenAI-assisted research project</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="section">
+            <div class="container">
+                <h2 class="section__title">Resources</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <h3>Academic Resources</h3>
+                        <ul>
+                            <li>Digital library access</li>
+                            <li>Research databases</li>
+                            <li>Academic writing support</li>
+                            <li>Citation management tools</li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h3>Student Support</h3>
+                        <ul>
+                            <li>Academic advising</li>
+                            <li>Career counseling</li>
+                            <li>Peer study groups</li>
+                            <li>Mental health support</li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h3>Technology Requirements</h3>
+                        <ul>
+                            <li>Reliable internet connection</li>
+                            <li>Computer with webcam/microphone</li>
+                            <li>Modern web browser</li>
+                            <li>Basic office software</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section section--bg">
+            <div class="container">
+                <h2 class="section__title">Contact Us</h2>
+                <div class="contact-content">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="subject">Subject</label>
+                                <select class="form-control" id="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="admissions">Admissions Inquiry</option>
+                                    <option value="courses">Course Information</option>
+                                    <option value="technical">Technical Support</option>
+                                    <option value="general">General Questions</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="message">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Program Coordinators</h3>
+                        <div class="contact-item">
+                            <h4>Dr. Sarah Mitchell</h4>
+                            <p>Program Director</p>
+                            <p>s.mitchell@university.edu</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Dr. James Chen</h4>
+                            <p>Admissions Coordinator</p>
+                            <p>j.chen@university.edu</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Office Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                            <p>Phone: +1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>MSc Educational Psychology</h4>
+                    <p>Advancing education through psychological science and innovative learning approaches.</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#admissions">Admissions</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" target="_blank">LinkedIn</a>
+                        <a href="#" target="_blank">Twitter</a>
+                        <a href="#" target="_blank">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 University. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
